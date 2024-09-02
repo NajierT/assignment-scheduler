@@ -269,7 +269,12 @@ public class AssignmentSchedulerUI extends JFrame implements ActionListener {
 				handleSubmitButton();
 			} catch (IOException e1) {
 				e1.printStackTrace();
-				unexpectedErrorExit();
+				try {
+					unexpectedErrorExit();
+				} catch (IOException e2) {
+					// TODO Auto-generated catch block
+					e2.printStackTrace();
+				}
 			}
     	}
     	if (e.getSource() == done) {
@@ -284,7 +289,12 @@ public class AssignmentSchedulerUI extends JFrame implements ActionListener {
 					report.setVisible(false);
 				} catch (IOException e1) {
 					e1.printStackTrace();
-					unexpectedErrorExit();
+					try {
+						unexpectedErrorExit();
+					} catch (IOException e2) {
+						// TODO Auto-generated catch block
+						e2.printStackTrace();
+					}
 				}
     		}
     	}
@@ -478,14 +488,9 @@ public class AssignmentSchedulerUI extends JFrame implements ActionListener {
     	return report;
     }
     
-    private void unexpectedErrorExit() {
-    	JOptionPane.showMessageDialog(frame, "Unexpected Error. Please try with new parameters. Exiting");
-    	try {
-			Thread.sleep(3000);
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-    	frame.dispose();
+    private void unexpectedErrorExit() throws IOException {
+    	JOptionPane.showMessageDialog(frame, "Unexpected Error. Please try with new parameters.", "Error", JOptionPane.YES_OPTION);
+    	scheduler.clearAssignments(calendarID);
     }
     
     private void startThread() {
@@ -528,9 +533,14 @@ public class AssignmentSchedulerUI extends JFrame implements ActionListener {
     			
     			try {
 					scheduler.setAssignmentSchedules(calendarID);
-				} catch (IOException e) {
+				} catch (Exception e) {
 					e.printStackTrace();
-					unexpectedErrorExit();
+					try {
+						unexpectedErrorExit();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 				}
     			endThread();
     	    }

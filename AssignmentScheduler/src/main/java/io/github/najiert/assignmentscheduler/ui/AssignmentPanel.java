@@ -254,17 +254,17 @@ public class AssignmentPanel{
         gbc.weighty = 0.5;
         
         colors = new JComboBox<Icon>();
-        colors.addItem(new ImageIcon("images/colorID_1.png"));
-        colors.addItem(new ImageIcon("images/colorID_2.png"));
-        colors.addItem(new ImageIcon("images/colorID_3.png"));
-        colors.addItem(new ImageIcon("images/colorID_4.png"));
-        colors.addItem(new ImageIcon("images/colorID_5.png"));
-        colors.addItem(new ImageIcon("images/colorID_6.png"));
-        colors.addItem(new ImageIcon("images/colorID_7.png"));
-        colors.addItem(new ImageIcon("images/colorID_8.png"));
-        colors.addItem(new ImageIcon("images/colorID_9.png"));
-        colors.addItem(new ImageIcon("images/colorID_10.png"));
-        colors.addItem(new ImageIcon("images/colorID_11.png"));
+        colors.addItem(new ImageIcon(getClass().getResource("/images/colorID_1.png")));
+        colors.addItem(new ImageIcon(getClass().getResource("/images/colorID_2.png")));
+        colors.addItem(new ImageIcon(getClass().getResource("/images/colorID_3.png")));
+        colors.addItem(new ImageIcon(getClass().getResource("/images/colorID_4.png")));
+        colors.addItem(new ImageIcon(getClass().getResource("/images/colorID_5.png")));
+        colors.addItem(new ImageIcon(getClass().getResource("/images/colorID_6.png")));
+        colors.addItem(new ImageIcon(getClass().getResource("/images/colorID_7.png")));
+        colors.addItem(new ImageIcon(getClass().getResource("/images/colorID_8.png")));
+        colors.addItem(new ImageIcon(getClass().getResource("/images/colorID_9.png")));
+        colors.addItem(new ImageIcon(getClass().getResource("/images/colorID_10.png")));
+        colors.addItem(new ImageIcon(getClass().getResource("/images/colorID_11.png")));
         
         colors.setSelectedIndex(DEFAULT_COLOR);
         assignmentPanel.add(colors, gbc);
