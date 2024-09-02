@@ -7,4 +7,3 @@ bin
 # Ignore tokens and credentials
 tokens
 credentials.json
-/build/
